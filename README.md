@@ -20,7 +20,8 @@ To use the input binding simple add 'FileName' to bring in a specific file
 
 1. [Azure Data Lake Store](https://azure.microsoft.com/en-us/services/data-lake-store/)
 2. Setup [Service to Service Auth](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory) using Azure AD
-3. Add the application settings noted below. 
+3. [Azure Functions and Webjobs tools](https://marketplace.visualstudio.com/items?itemName=VisualStudioWebandAzureTools.AzureFunctionsandWebJobsTools) extension 
+4. Add the application settings noted below. 
 
 ### local.settings.json expected content
 ```
@@ -36,6 +37,4 @@ To use the input binding simple add 'FileName' to bring in a specific file
     "blobconn": "<Azure Blobg Storage Connection String for testing Blob Trigger>"
   }
 }
-
-
 ```
