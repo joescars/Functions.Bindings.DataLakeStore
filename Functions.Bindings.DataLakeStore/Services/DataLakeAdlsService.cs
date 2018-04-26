@@ -2,8 +2,6 @@
 using Microsoft.Rest;
 using Microsoft.Rest.Azure.Authentication;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 
 namespace Functions.Bindings.DataLakeStore.Services

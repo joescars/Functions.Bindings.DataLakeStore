@@ -1,5 +1,4 @@
 ﻿using Microsoft.Azure.WebJobs.Host.Config;
-using Newtonsoft.Json.Linq;
 using System.IO;
 
 namespace Functions.Bindings.DataLakeStore

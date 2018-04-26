@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.IO;
-using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Azure.DataLake.Store;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Rest;
-using Microsoft.Rest.Azure.Authentication;
-using Newtonsoft.Json.Linq;
 using Functions.Bindings.DataLakeStore.Services;
 
 namespace Functions.Bindings.DataLakeStore
