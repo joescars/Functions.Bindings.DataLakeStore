@@ -222,6 +222,9 @@
     <Compile Include="..\Functions.Bindings.DataLakeStore\DataLakeStoreStreamBuilder.cs">
       <Link>DataLakeStoreStreamBuilder.cs</Link>
     </Compile>
+    <Compile Include="..\Functions.Bindings.DataLakeStore\Services\DataLakeAdlsService.cs">
+      <Link>Services\DataLakeAdlsService.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -24,9 +24,9 @@ namespace TestFunction.v2
             {
                 var contents = reader.ReadToEnd();
                 log.Info(contents);
+                return new OkObjectResult(contents);
             }
-
-            return new OkResult();
+            
         }
     }
 }

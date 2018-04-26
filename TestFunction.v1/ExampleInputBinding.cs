@@ -24,9 +24,9 @@ namespace TestFunction.v1
             {
                 var contents = await reader.ReadToEndAsync();
                 log.Info(contents);
+                return req.CreateResponse(HttpStatusCode.OK,contents);
             }
 
-            return req.CreateResponse(HttpStatusCode.OK);
         }
     }
 }
