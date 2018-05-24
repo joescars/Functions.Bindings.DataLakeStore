@@ -16,7 +16,7 @@ namespace Functions.Bindings.DataLakeStore
 
             // Input binding for DataLakeStore
             rule.WhenIsNotNull(nameof(DataLakeStoreAttribute.FileName))
-                .BindToInput<Stream>(typeof(DataLakeStoreStreamBuilder), this);
+                .BindToInput<Stream>(typeof(DataLakeStoreStreamBuilder));
 
         }
     }

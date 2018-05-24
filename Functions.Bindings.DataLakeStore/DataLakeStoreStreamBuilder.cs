@@ -10,9 +10,8 @@ namespace Functions.Bindings.DataLakeStore
     public class DataLakeStoreStreamBuilder : IAsyncConverter<DataLakeStoreAttribute, Stream>
     {
         private static AdlsClient _adlsClient;
-        private DataLakeStoreAttribute _attribute;
 
-        public DataLakeStoreStreamBuilder(DataLakeConfiguration config)
+        public DataLakeStoreStreamBuilder()
         {
             
         }
