@@ -207,29 +207,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Functions.Bindings.DataLakeStore\DataLakeStoreAttribute.cs">
-      <Link>DataLakeStoreAttribute.cs</Link>
-    </Compile>
-    <Compile Include="..\Functions.Bindings.DataLakeStore\DataLakeStoreConfiguration.cs">
-      <Link>DataLakeStoreConfiguration.cs</Link>
-    </Compile>
-    <Compile Include="..\Functions.Bindings.DataLakeStore\DataLakeStoreOutput.cs">
-      <Link>DataLakeStoreOutput.cs</Link>
-    </Compile>
-    <Compile Include="..\Functions.Bindings.DataLakeStore\DataLakeStoreOutputAsyncCollector.cs">
-      <Link>DataLakeStoreOutputAsyncCollector.cs</Link>
-    </Compile>
-    <Compile Include="..\Functions.Bindings.DataLakeStore\DataLakeStoreStreamBuilder.cs">
-      <Link>DataLakeStoreStreamBuilder.cs</Link>
-    </Compile>
-    <Compile Include="..\Functions.Bindings.DataLakeStore\Services\DataLakeAdlsService.cs">
-      <Link>Services\DataLakeAdlsService.cs</Link>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <Import Project="..\Functions.Bindings.DataLakeStore\Functions.Bindings.DataLakeStore.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
