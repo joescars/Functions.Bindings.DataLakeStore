@@ -1,9 +1,9 @@
-﻿using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Functions.Bindings.DataLakeStore.Services;
 using Microsoft.Azure.DataLake.Store;
 using Microsoft.Azure.WebJobs;
-using Functions.Bindings.DataLakeStore.Services;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Functions.Bindings.DataLakeStore
 {

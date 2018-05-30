@@ -1,10 +1,7 @@
-using System.IO;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Functions.Bindings.DataLakeStore;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
+using System.IO;
 
 namespace TestFunction.v1
 {
