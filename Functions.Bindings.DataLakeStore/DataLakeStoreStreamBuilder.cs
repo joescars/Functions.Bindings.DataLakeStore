@@ -11,7 +11,7 @@ namespace Functions.Bindings.DataLakeStore
     {
         private static AdlsClient _adlsClient;
 
-        public DataLakeStoreStreamBuilder()
+        public DataLakeStoreStreamBuilder() 
         {
             
         }
@@ -19,7 +19,7 @@ namespace Functions.Bindings.DataLakeStore
         public async Task<Stream> ConvertAsync(DataLakeStoreAttribute input, CancellationToken cancellationToken)
         {
             // Create ADLS client object
-            var adlsClient = _adlsClient ?? (_adlsClient = DataLakeAdlsService.CreateAdlsClient(input.TenantID, input.ClientSecret, input.ApplicationId, input.AccountFQDN));
+            var adlsClient = _adlsClient ?? (_adlsClient = await DataLakeAdlsService.CreateAdlsClientAsync(input.TenantID, input.ClientSecret, input.ApplicationId, input.AccountFQDN));
 
             return await adlsClient.GetReadStreamAsync(input.FileName);
         }

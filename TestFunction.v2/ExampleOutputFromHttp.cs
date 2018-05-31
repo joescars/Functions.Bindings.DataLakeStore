@@ -19,8 +19,8 @@ namespace TestFunction.v2
 
             items.AddAsync(new DataLakeStoreOutput()
             {
-                filename = "/mydata/" + Guid.NewGuid().ToString() + ".txt",
-                stream = req.Body
+                FileName = "/mydata/" + Guid.NewGuid().ToString() + ".txt",
+                FileStream = req.Body
             });
 
             return new OkResult();

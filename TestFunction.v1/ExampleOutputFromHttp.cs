@@ -20,8 +20,8 @@ namespace TestFunction.v1
 
             await items.AddAsync(new DataLakeStoreOutput()
             {
-                filename = "/mydata/" + Guid.NewGuid().ToString() + ".txt",
-                stream = await req.Content.ReadAsStreamAsync()
+                FileName = "/mydata/" + Guid.NewGuid().ToString() + ".txt",
+                FileStream = await req.Content.ReadAsStreamAsync()
             });
 
             return req.CreateResponse(HttpStatusCode.OK);
