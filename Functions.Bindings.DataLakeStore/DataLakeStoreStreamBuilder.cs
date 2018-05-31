@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Functions.Bindings.DataLakeStore
 {
-    public class DataLakeStoreStreamBuilder : IAsyncConverter<DataLakeStoreAttribute, Stream>
+    internal class DataLakeStoreStreamBuilder : IAsyncConverter<DataLakeStoreAttribute, Stream>
     {
         private static AdlsClient _adlsClient;
 

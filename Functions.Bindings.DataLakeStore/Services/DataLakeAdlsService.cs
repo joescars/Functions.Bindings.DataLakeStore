@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Functions.Bindings.DataLakeStore.Services
 {
-    public class DataLakeAdlsService
+    internal class DataLakeAdlsService
     {
         public static async Task<AdlsClient> CreateAdlsClientAsync(string tenant, string clientsecret, string applicationid, string fqdn)
         {

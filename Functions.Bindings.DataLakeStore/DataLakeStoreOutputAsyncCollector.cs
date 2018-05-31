@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Functions.Bindings.DataLakeStore
 {
 
-    public class DataLakeStoreOutputAsyncCollector : IAsyncCollector<DataLakeStoreOutput>
+    internal class DataLakeStoreOutputAsyncCollector : IAsyncCollector<DataLakeStoreOutput>
     {
         private static AdlsClient _adlsClient;
         private readonly Collection<DataLakeStoreOutput> _items = new Collection<DataLakeStoreOutput>();
