@@ -21,7 +21,7 @@ namespace Functions.Bindings.DataLakeStore
             this._attribute = attr;
         }
 
-        public Task AddAsync(DataLakeStoreOutput item, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task AddAsync(DataLakeStoreOutput item, CancellationToken cancellationToken = default(CancellationToken))
         {
 
             if (item == null)
@@ -34,28 +34,21 @@ namespace Functions.Bindings.DataLakeStore
                 throw new InvalidOperationException("You must specify a filename.");
             }
 
-            _items.Add(item);            
+            // Create ADLS Client
+            var adlsClient = _adlsClient ?? (_adlsClient = await DataLakeAdlsService.CreateAdlsClientAsync(
+                _attribute.TenantID, _attribute.ClientSecret, _attribute.ApplicationId, _attribute.AccountFQDN
+                ));
 
-            return Task.CompletedTask;
+            // Write the file
+            using (var stream = await adlsClient.CreateFileAsync(item.FileName, IfExists.Overwrite))
+            {
+                await item.FileStream.CopyToAsync(stream);
+            }
         }
 
-        public async Task FlushAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public Task FlushAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-
-            // Create ADLS client object
-            var adlsClient = _adlsClient ?? (_adlsClient =  await DataLakeAdlsService.CreateAdlsClientAsync(_attribute.TenantID, _attribute.ClientSecret, _attribute.ApplicationId, _attribute.AccountFQDN));
-
-            foreach (var item in _items)
-            {
-                // Create a file - automatically creates any parent directories that don't exist
-                string fileName = item.FileName;
-
-                using (var stream = adlsClient.CreateFile(fileName, IfExists.Overwrite))
-                {
-                    item.FileStream.CopyTo(stream);
-                }
-            }
-
+            return Task.CompletedTask;
         }
 
     }
