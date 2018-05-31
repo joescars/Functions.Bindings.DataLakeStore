@@ -15,8 +15,8 @@ namespace TestFunction.v2
             log.Info($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
 
             var d = new DataLakeStoreOutput();
-            d.filename = "/mydata/" + name;
-            d.stream = myBlob;
+            d.FileName = "/mydata/" + name;
+            d.FileStream = myBlob;
             dataLakeStoreOutput = d;
 
         }

@@ -6,14 +6,14 @@ namespace Functions.Bindings.DataLakeStore
     public class DataLakeStoreOutput
     {
         /// <summary>
-        /// Gets or sets the filename.
+        /// Gets or sets the File Name.
         /// </summary>
-        public string filename;
+        public string FileName;
 
         /// <summary>
-        /// Gets or sets the stream.
+        /// Gets or sets the File Stream.
         /// </summary>
-        public Stream stream;
+        public Stream FileStream;
           
     }
 }

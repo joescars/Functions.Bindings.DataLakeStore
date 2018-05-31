@@ -29,7 +29,7 @@ namespace Functions.Bindings.DataLakeStore
                 throw new ArgumentNullException("item");
             }
 
-            if (item.filename == null)
+            if (item.FileName == null)
             {
                 throw new InvalidOperationException("You must specify a filename.");
             }
@@ -39,24 +39,23 @@ namespace Functions.Bindings.DataLakeStore
             return Task.CompletedTask;
         }
 
-        public Task FlushAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task FlushAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
 
             // Create ADLS client object
-            var adlsClient = _adlsClient ?? (_adlsClient = DataLakeAdlsService.CreateAdlsClient(_attribute.TenantID, _attribute.ClientSecret, _attribute.ApplicationId, _attribute.AccountFQDN));
+            var adlsClient = _adlsClient ?? (_adlsClient =  await DataLakeAdlsService.CreateAdlsClientAsync(_attribute.TenantID, _attribute.ClientSecret, _attribute.ApplicationId, _attribute.AccountFQDN));
 
             foreach (var item in _items)
             {
                 // Create a file - automatically creates any parent directories that don't exist
-                string fileName = item.filename;
+                string fileName = item.FileName;
 
                 using (var stream = adlsClient.CreateFile(fileName, IfExists.Overwrite))
                 {
-                    item.stream.CopyTo(stream);
+                    item.FileStream.CopyTo(stream);
                 }
             }
 
-            return Task.CompletedTask;
         }
 
     }
